@@ -3,6 +3,13 @@
 @use '~/assets/scss/general/variables' as *;
 @use '~/assets/scss/abstracts/mixins' as *;
 
+html,
+body,
+/* stylelint-disable-next-line selector-id-pattern */
+body > #__nuxt {
+	height: 100%;
+}
+
 .visually-hidden {
 	position: absolute;
 	overflow: hidden;
