@@ -5,6 +5,10 @@ definePageMeta({
 	layout: 'dashboard'
 })
 
+useHead({
+	title: 'Настройки'
+})
+
 const links = [
 	[
 		{

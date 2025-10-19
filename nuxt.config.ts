@@ -6,7 +6,7 @@ export default defineNuxtConfig({
 		host: '0.0.0.0'
 	},
 	devtools: { enabled: true },
-	modules: ['@nuxt/eslint', '@nuxt/ui'],
+	modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxtjs/mdc'],
 	css: ['~/assets/css/main.css', '~/assets/scss/main.scss'],
 	vite: {
 		plugins: [

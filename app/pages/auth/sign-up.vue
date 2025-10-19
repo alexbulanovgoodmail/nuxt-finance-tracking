@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import type { AuthFormField } from '@nuxt/ui'
 
+useHead({
+	title: 'Регистрация'
+})
+
 const fields: AuthFormField[] = [
 	{
 		name: 'name',
@@ -25,6 +29,13 @@ const fields: AuthFormField[] = [
 		size: 'xl',
 		placeholder: 'Придумайте пароль',
 		required: true
+	},
+	{
+		name: 'agree',
+		type: 'checkbox',
+		label: 'Я принимаю условия пользовательского соглашения *',
+		size: 'xl',
+		required: true
 	}
 ]
 </script>
@@ -43,8 +54,14 @@ const fields: AuthFormField[] = [
 		>
 			<template #footer>
 				Уже зарегистрированы?
-				<ULink to="/auth/sign-in/" class="text-primary font-medium">Войти</ULink
+				<NuxtLink to="/auth/sign-in/" class="text-primary font-medium"
+					>Войти</NuxtLink
 				>.
+				<div>
+					<ULink to="/agreement/" target="_blank" class="font-medium text-sm">
+						* Пользовательское соглашения
+					</ULink>
+				</div>
 			</template>
 		</UAuthForm>
 	</UPageCard>

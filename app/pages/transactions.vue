@@ -2,6 +2,10 @@
 definePageMeta({
 	layout: 'dashboard'
 })
+
+useHead({
+	title: 'Транзакции'
+})
 </script>
 
 <template>

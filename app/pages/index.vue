@@ -5,6 +5,10 @@ definePageMeta({
 	layout: 'dashboard'
 })
 
+useHead({
+	title: 'Главная'
+})
+
 const items = [
 	[
 		{

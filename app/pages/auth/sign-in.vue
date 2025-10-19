@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import type { AuthFormField } from '@nuxt/ui'
 
+useHead({
+	title: 'Вход'
+})
+
 const fields: AuthFormField[] = [
 	{
 		name: 'email',
