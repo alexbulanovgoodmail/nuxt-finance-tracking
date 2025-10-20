@@ -1,27 +1,11 @@
 <script setup lang="ts">
-import type { Period, Range } from '~~/types'
-import { eachDayOfInterval } from 'date-fns'
+import type { Period } from '~~/types'
 
 const { t } = useI18n()
 
 const model = defineModel<Period>({ required: true })
-const props = defineProps<{
-	range: Range
-}>()
 
-const days = computed(() => eachDayOfInterval(props.range))
-
-const periods = computed<Period[]>(() => {
-	if (days.value.length <= 8) {
-		return ['daily']
-	}
-
-	if (days.value.length <= 31) {
-		return ['daily', 'weekly']
-	}
-
-	return ['weekly', 'monthly']
-})
+const periods = ref<Period[]>(['daily', 'weekly', 'monthly', 'yearly'])
 
 const localizedItems = computed(() =>
 	periods.value.map(period => ({
@@ -42,5 +26,6 @@ const localizedItems = computed(() =>
 			trailingIcon:
 				'group-data-[state=open]:rotate-180 transition-transform duration-200'
 		}"
+		class="min-w-32"
 	/>
 </template>

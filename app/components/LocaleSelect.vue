@@ -11,5 +11,9 @@ const currentLocale = computed({
 </script>
 
 <template>
-	<ULocaleSelect v-model="currentLocale" :locales="locales as any[]" />
+	<ULocaleSelect
+		v-model="currentLocale"
+		:locales="locales as any[]"
+		class="min-w-32"
+	/>
 </template>

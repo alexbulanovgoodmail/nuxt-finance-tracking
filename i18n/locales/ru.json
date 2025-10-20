@@ -2,7 +2,8 @@
 	"period": {
 		"daily": "День",
 		"weekly": "Неделя",
-		"monthly": "Месяц"
+		"monthly": "Месяц",
+		"yearly": "Год"
 	},
 	"navigation": {
 		"sign-in": "Вход",

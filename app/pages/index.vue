@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { DropdownMenuItem } from '@nuxt/ui'
-import type { Period, Range } from '~~/types'
-import { sub } from 'date-fns'
+import type { Period } from '~~/types'
 
 definePageMeta({
 	layout: 'dashboard'
@@ -26,11 +25,7 @@ const items = [
 	]
 ] satisfies DropdownMenuItem[][]
 
-const range = shallowRef<Range>({
-	start: sub(new Date(), { days: 14 }),
-	end: new Date()
-})
-const period = ref<Period>('daily')
+const period = ref<Period>('monthly')
 </script>
 
 <template>
@@ -45,7 +40,7 @@ const period = ref<Period>('daily')
 			</UDashboardNavbar>
 			<UDashboardToolbar>
 				<template #left>
-					<PeriodSelect v-model="period" :range="range" />
+					<PeriodSelect v-model="period" />
 				</template>
 			</UDashboardToolbar>
 		</template>

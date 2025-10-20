@@ -2,7 +2,8 @@
 	"period": {
 		"daily": "Daily",
 		"weekly": "Weekly",
-		"monthly": "Monthly"
+		"monthly": "Monthly",
+		"yearly": "Yearly"
 	},
 	"navigation": {
 		"sign-in": "Sign In",

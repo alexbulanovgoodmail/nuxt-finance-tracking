@@ -46,6 +46,6 @@ const items = computed<DropdownMenuItem[][]>(() => [
 		v-model="currentAppearance"
 		value-key="label"
 		:items="items"
-		class="w-32"
+		class="min-w-32"
 	/>
 </template>
