@@ -45,6 +45,41 @@ const period = ref<Period>('monthly')
 			</UDashboardToolbar>
 		</template>
 
-		<template #body> </template>
+		<template #body>
+			<UPageGrid class="lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-px">
+				<TrendCard
+					:title="t('transactions.income')"
+					:icon="'i-lucide-trending-up'"
+					:amount="4000"
+					:last-amount="3000"
+					color="success"
+					:loading="false"
+				/>
+				<TrendCard
+					:title="t('transactions.income')"
+					:icon="'i-lucide-trending-up'"
+					:amount="4000"
+					:last-amount="3000"
+					color="error"
+					:loading="true"
+				/>
+				<TrendCard
+					:title="t('transactions.income')"
+					:icon="'i-lucide-trending-up'"
+					:amount="4000"
+					:last-amount="3000"
+					color="success"
+					:loading="false"
+				/>
+				<TrendCard
+					:title="t('transactions.income')"
+					:icon="'i-lucide-trending-up'"
+					:amount="4000"
+					:last-amount="3000"
+					color="error"
+					:loading="false"
+				/>
+			</UPageGrid>
+		</template>
 	</UDashboardPanel>
 </template>

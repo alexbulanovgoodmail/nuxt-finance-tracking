@@ -24,6 +24,8 @@
 		"language": "Язык"
 	},
 	"transactions": {
+		"income": "Доход",
+		"expense": "Расход",
 		"new-income": "Новый доход",
 		"new-expense": "Новый расход"
 	}
