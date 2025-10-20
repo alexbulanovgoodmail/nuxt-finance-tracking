@@ -1,22 +1,25 @@
 <script setup lang="ts">
-const links = [
+const { t } = useI18n()
+const localePath = useLocalePath()
+
+const links = computed(() => [
 	[
 		{
-			label: 'Главная',
+			label: t('navigation.home'),
 			icon: 'i-lucide-house',
-			to: '/',
+			to: localePath('/'),
 			exact: true,
 			onSelect: () => {}
 		},
 		{
-			label: 'Транзакции',
+			label: t('navigation.transactions'),
 			icon: 'i-lucide-history',
-			to: '/transactions/',
+			to: localePath('/transactions/'),
 			exact: true,
 			onSelect: () => {}
 		}
 	]
-]
+])
 </script>
 
 <template>

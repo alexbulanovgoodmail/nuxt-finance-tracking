@@ -1,6 +1,8 @@
 <script setup lang="ts">
+const { t } = useI18n()
+
 useHead({
-	title: 'Пользовательское соглашение'
+	title: t('navigation.agreement')
 })
 
 const value = `

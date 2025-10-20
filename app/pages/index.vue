@@ -7,20 +7,21 @@ definePageMeta({
 	layout: 'dashboard'
 })
 
+const { t } = useI18n()
+
 useHead({
-	title: 'Главная'
+	title: t('navigation.home')
 })
 
 const items = [
 	[
 		{
-			label: 'Новый доход',
+			label: t('transactions.new-income'),
 			icon: 'i-lucide-arrow-big-right-dash'
 		},
 		{
-			label: 'Новый расход',
-			icon: 'i-lucide-arrow-big-left-dash',
-			to: '/customers'
+			label: t('transactions.new-expense'),
+			icon: 'i-lucide-arrow-big-left-dash'
 		}
 	]
 ] satisfies DropdownMenuItem[][]
@@ -35,7 +36,7 @@ const period = ref<Period>('daily')
 <template>
 	<UDashboardPanel id="home">
 		<template #header>
-			<UDashboardNavbar title="Главная">
+			<UDashboardNavbar :title="t('navigation.home')">
 				<template #right>
 					<UDropdownMenu :items="items">
 						<UButton icon="i-lucide-plus" size="md" class="rounded-full" />

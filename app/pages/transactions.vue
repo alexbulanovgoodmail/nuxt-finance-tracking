@@ -3,15 +3,17 @@ definePageMeta({
 	layout: 'dashboard'
 })
 
+const { t } = useI18n()
+
 useHead({
-	title: 'Транзакции'
+	title: t('navigation.transactions')
 })
 </script>
 
 <template>
-	<UDashboardPanel id="home">
+	<UDashboardPanel id="transactions">
 		<template #header>
-			<UDashboardNavbar title="Транзакции" />
+			<UDashboardNavbar :title="t('navigation.transactions')" />
 		</template>
 
 		<template #body> Тут будут все транзакции </template>

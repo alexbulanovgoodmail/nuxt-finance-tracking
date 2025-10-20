@@ -1,0 +1,29 @@
+{
+	"period": {
+		"daily": "День",
+		"weekly": "Неделя",
+		"monthly": "Месяц"
+	},
+	"navigation": {
+		"sign-in": "Вход",
+		"sign-up": "Регистрация",
+		"home": "Главная",
+		"transactions": "Транзакции",
+		"profile": "Профиль",
+		"settings": "Настройки",
+		"settings-general": "Основные",
+		"settings-profile": "Профиль",
+		"logout": "Выйти",
+		"agreement": "Пользовательское соглашение"
+	},
+	"settings": {
+		"appearance": "Оформление",
+		"appearance-light": "Светлое",
+		"appearance-dark": "Тёмное",
+		"language": "Язык"
+	},
+	"transactions": {
+		"new-income": "Новый доход",
+		"new-expense": "Новый расход"
+	}
+}

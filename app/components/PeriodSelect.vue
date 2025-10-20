@@ -2,6 +2,8 @@
 import type { Period, Range } from '~~/types'
 import { eachDayOfInterval } from 'date-fns'
 
+const { t } = useI18n()
+
 const model = defineModel<Period>({ required: true })
 const props = defineProps<{
 	range: Range
@@ -20,12 +22,19 @@ const periods = computed<Period[]>(() => {
 
 	return ['weekly', 'monthly']
 })
+
+const localizedItems = computed(() =>
+	periods.value.map(period => ({
+		label: t(`period.${period}`),
+		value: period
+	}))
+)
 </script>
 
 <template>
 	<USelect
 		v-model="model"
-		:items="periods"
+		:items="localizedItems"
 		variant="ghost"
 		:ui="{
 			value: 'capitalize',

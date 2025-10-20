@@ -5,22 +5,25 @@ definePageMeta({
 	layout: 'dashboard'
 })
 
+const { t } = useI18n()
+const localePath = useLocalePath()
+
 useHead({
-	title: 'Настройки'
+	title: t('navigation.settings')
 })
 
 const links = [
 	[
 		{
-			label: 'Основые',
+			label: t('navigation.settings-general'),
 			icon: 'i-lucide-tool-case',
-			to: '/settings/',
+			to: localePath('/settings/'),
 			exact: true
 		},
 		{
-			label: 'Профиль',
+			label: t('navigation.settings-profile'),
 			icon: 'i-lucide-user',
-			to: '/settings/profile',
+			to: localePath('/settings/profile'),
 			exact: true
 		}
 	]
@@ -30,7 +33,7 @@ const links = [
 <template>
 	<UDashboardPanel id="settings">
 		<template #header>
-			<UDashboardNavbar title="Настройки" />
+			<UDashboardNavbar :title="t('navigation.settings')" />
 
 			<UDashboardToolbar>
 				<UNavigationMenu :items="links" highlight class="-mx-1 flex-1" />

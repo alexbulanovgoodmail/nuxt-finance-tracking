@@ -1,0 +1,29 @@
+{
+	"period": {
+		"daily": "Daily",
+		"weekly": "Weekly",
+		"monthly": "Monthly"
+	},
+	"navigation": {
+		"sign-in": "Sign In",
+		"sign-up": "Sign Up",
+		"home": "Home",
+		"transactions": "Transactions",
+		"profile": "Profile",
+		"settings": "Settings",
+		"settings-general": "General",
+		"settings-profile": "Profile",
+		"logout": "Logout",
+		"agreement": "User agreement"
+	},
+	"settings": {
+		"appearance": "Appearance",
+		"appearance-light": "Light",
+		"appearance-dark": "Dark",
+		"language": "Language"
+	},
+	"transactions": {
+		"new-income": "New income",
+		"new-expense": "New expense"
+	}
+}

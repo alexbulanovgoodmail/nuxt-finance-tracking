@@ -2,9 +2,10 @@
 import type { DropdownMenuItem } from '@nuxt/ui'
 import { useColorMode } from '@vueuse/core'
 
+const { t } = useI18n()
 const colorMode = useColorMode()
+const localePath = useLocalePath()
 
-// Юзер
 const user = ref({
 	name: 'Alexander Bulanov',
 	avatar: {
@@ -23,25 +24,25 @@ const items = computed<DropdownMenuItem[][]>(() => [
 	],
 	[
 		{
-			label: 'Профиль',
+			label: t('navigation.profile'),
 			icon: 'i-lucide-user',
-			to: '/settings/profile/',
+			to: localePath('/settings/profile/'),
 			exact: true
 		},
 		{
-			label: 'Настройки',
+			label: t('navigation.settings'),
 			icon: 'i-lucide-settings',
-			to: '/settings/',
+			to: localePath('/settings/'),
 			exact: true
 		}
 	],
 	[
 		{
-			label: 'Тема',
+			label: t('settings.appearance'),
 			icon: 'i-lucide-sun-moon',
 			children: [
 				{
-					label: 'Светлая',
+					label: t('settings.appearance-light'),
 					icon: 'i-lucide-sun',
 					type: 'checkbox',
 					checked: colorMode.value === 'light',
@@ -52,7 +53,7 @@ const items = computed<DropdownMenuItem[][]>(() => [
 					}
 				},
 				{
-					label: 'Тёмная',
+					label: t('settings.appearance-dark'),
 					icon: 'i-lucide-moon',
 					type: 'checkbox',
 					checked: colorMode.value === 'dark',
@@ -70,7 +71,7 @@ const items = computed<DropdownMenuItem[][]>(() => [
 	],
 	[
 		{
-			label: 'Выход',
+			label: t('navigation.logout'),
 			icon: 'i-lucide-log-out'
 		}
 	]

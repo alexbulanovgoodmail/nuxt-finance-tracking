@@ -6,7 +6,7 @@ export default defineNuxtConfig({
 		host: '0.0.0.0'
 	},
 	devtools: { enabled: true },
-	modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxtjs/mdc'],
+	modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxtjs/mdc', '@nuxtjs/i18n'],
 	css: ['~/assets/css/main.css', '~/assets/scss/main.scss'],
 	vite: {
 		plugins: [
@@ -30,5 +30,28 @@ export default defineNuxtConfig({
 	},
 	runtimeConfig: {
 		public: {}
+	},
+	i18n: {
+		strategy: 'prefix_except_default',
+		locales: [
+			{
+				code: 'en',
+				name: 'English',
+				language: 'en',
+				file: 'en.json'
+			},
+			{
+				code: 'ru',
+				name: 'Русский',
+				language: 'ru',
+				file: 'ru.json'
+			}
+		],
+		defaultLocale: 'ru',
+		detectBrowserLanguage: {
+			useCookie: true,
+			cookieCrossOrigin: true,
+			redirectOn: 'root'
+		}
 	}
 })

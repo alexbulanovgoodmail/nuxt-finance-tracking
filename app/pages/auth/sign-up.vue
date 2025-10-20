@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import type { AuthFormField } from '@nuxt/ui'
 
+const { t } = useI18n()
+
 useHead({
-	title: 'Регистрация'
+	title: t('navigation.sign-up')
 })
 
 const fields: AuthFormField[] = [
@@ -43,7 +45,7 @@ const fields: AuthFormField[] = [
 <template>
 	<UPageCard class="w-full max-w-md">
 		<UAuthForm
-			title="Регистрация"
+			:title="t('navigation.sign-up')"
 			description="Чтобы зарегистрироваться, заполните форму."
 			icon="i-lucide-user"
 			:fields="fields"
