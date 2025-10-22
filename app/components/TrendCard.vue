@@ -8,6 +8,7 @@ interface Props {
 }
 
 const { amount, lastAmount } = defineProps<Props>()
+const { currency } = useCurrency(amount)
 const trendingUp = computed<boolean>(() => amount >= lastAmount)
 const trendIcon = computed<string>(() =>
 	trendingUp.value ? 'i-lucide-trending-up' : 'i-lucide-trending-down'
@@ -38,13 +39,13 @@ const percentageTrend = computed<string>(() => {
 		}"
 		class="lg:rounded-none first:rounded-l-lg last:rounded-r-lg hover:z-1"
 	>
-		<div class="flex items-center gap-2">
+		<div class="flex flex-col items-start gap-2">
 			<template v-if="loading">
 				<USkeleton class="h-48 w-full" />
 			</template>
 			<template v-else>
 				<span class="text-2xl font-semibold text-highlighted">
-					{{ amount }}
+					{{ currency }}
 				</span>
 
 				<UBadge
