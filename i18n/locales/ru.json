@@ -26,6 +26,8 @@
 	"transactions": {
 		"income": "Доход",
 		"expense": "Расход",
+		"savings": "Сбережения",
+		"investment": "Инвестиции",
 		"new-income": "Новый доход",
 		"new-expense": "Новый расход"
 	}

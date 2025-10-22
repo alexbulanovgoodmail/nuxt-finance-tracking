@@ -26,6 +26,8 @@
 	"transactions": {
 		"income": "Income",
 		"expense": "Expense",
+		"savings": "Savings",
+		"investment": "Investment",
 		"new-income": "New income",
 		"new-expense": "New expense"
 	}
