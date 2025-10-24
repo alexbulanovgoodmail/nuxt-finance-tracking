@@ -23,6 +23,17 @@
 		"appearance-dark": "Dark",
 		"language": "Language"
 	},
+	"table": {
+		"id": "ID",
+		"title": "Title",
+		"date": "Date",
+		"amount": "Amount",
+		"category": "Category",
+		"actions": "Actions",
+		"no-data": "No data",
+		"action-edit": "Edit",
+		"action-delete": "Delete"
+	},
 	"transactions": {
 		"income": "Income",
 		"expense": "Expense",

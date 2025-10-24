@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { formatCurrency } from '~/utils/formatCurrency'
+
 interface Props {
 	title: string
 	amount: number
@@ -8,7 +10,7 @@ interface Props {
 }
 
 const { amount, lastAmount } = defineProps<Props>()
-const { currency } = useCurrency(amount)
+
 const trendingUp = computed<boolean>(() => amount >= lastAmount)
 const trendIcon = computed<string>(() =>
 	trendingUp.value ? 'i-lucide-trending-up' : 'i-lucide-trending-down'
@@ -45,7 +47,7 @@ const percentageTrend = computed<string>(() => {
 			</template>
 			<template v-else>
 				<span class="text-2xl font-semibold text-highlighted">
-					{{ currency }}
+					{{ formatCurrency(amount) }}
 				</span>
 
 				<UBadge

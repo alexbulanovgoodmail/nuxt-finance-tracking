@@ -23,6 +23,17 @@
 		"appearance-dark": "Тёмное",
 		"language": "Язык"
 	},
+	"table": {
+		"id": "ID",
+		"title": "Название",
+		"date": "Дата",
+		"amount": "Сумма",
+		"category": "Категория",
+		"actions": "Действия",
+		"no-data": "Нет данных",
+		"action-edit": "Редактировать",
+		"action-delete": "Удалить"
+	},
 	"transactions": {
 		"income": "Доход",
 		"expense": "Расход",
