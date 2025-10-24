@@ -8,6 +8,7 @@
 	"navigation": {
 		"sign-in": "Вход",
 		"sign-up": "Регистрация",
+		"confirm": "Подтверждение",
 		"home": "Главная",
 		"transactions": "Транзакции",
 		"profile": "Профиль",

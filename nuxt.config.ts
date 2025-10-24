@@ -6,7 +6,13 @@ export default defineNuxtConfig({
 		host: '0.0.0.0'
 	},
 	devtools: { enabled: true },
-	modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxtjs/mdc', '@nuxtjs/i18n'],
+	modules: [
+		'@nuxt/eslint',
+		'@nuxt/ui',
+		'@nuxtjs/mdc',
+		'@nuxtjs/i18n',
+		'@nuxtjs/supabase'
+	],
 	css: ['~/assets/css/main.css', '~/assets/scss/main.scss'],
 	vite: {
 		plugins: [
@@ -52,6 +58,17 @@ export default defineNuxtConfig({
 			useCookie: true,
 			cookieCrossOrigin: true,
 			redirectOn: 'root'
+		}
+	},
+	supabase: {
+		redirect: false,
+
+		redirectOptions: {
+			login: '/auth/sign-in/',
+			callback: '/auth/confirm/',
+			include: undefined,
+			exclude: ['/auth/sign-up/'],
+			saveRedirectToCookie: false
 		}
 	}
 })

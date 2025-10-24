@@ -8,6 +8,7 @@
 	"navigation": {
 		"sign-in": "Sign In",
 		"sign-up": "Sign Up",
+		"confirm": "Confirmation",
 		"home": "Home",
 		"transactions": "Transactions",
 		"profile": "Profile",
