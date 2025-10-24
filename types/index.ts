@@ -7,8 +7,8 @@ export interface Range {
 
 export interface Transaction {
 	id: string | number
-	title: string
+	created_at: string
+	description: string
 	category: string
-	date: string
 	amount: number
 }

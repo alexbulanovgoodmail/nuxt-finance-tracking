@@ -13,18 +13,18 @@ const { t } = useI18n()
 const transactions = ref<Transaction[]>([
 	{
 		id: '11',
-		title: 'Зарплата',
+		description: 'Зарплата',
 		category: 'Категория',
-		date: new Date().toISOString(),
+		created_at: new Date().toISOString(),
 		amount: 85000
 	}
 ])
 
 const columns: TableColumn<Transaction>[] = [
 	{
-		accessorKey: 'title',
-		header: t('table.title'),
-		cell: ({ row }) => `${row.getValue('title')}`
+		accessorKey: 'description',
+		header: t('table.description'),
+		cell: ({ row }) => `${row.getValue('description')}`
 	},
 	{
 		accessorKey: 'category',
@@ -32,10 +32,10 @@ const columns: TableColumn<Transaction>[] = [
 		cell: ({ row }) => `${row.getValue('category')}`
 	},
 	{
-		accessorKey: 'date',
-		header: t('table.date'),
+		accessorKey: 'created_at',
+		header: t('table.created_at'),
 		cell: ({ row }) => {
-			return new Date(row.getValue('date')).toLocaleString('ru-RU', {
+			return new Date(row.getValue('created_at')).toLocaleString('ru-RU', {
 				day: 'numeric',
 				month: 'short',
 				hour: '2-digit',

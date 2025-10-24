@@ -26,8 +26,8 @@
 	},
 	"table": {
 		"id": "ID",
-		"title": "Title",
-		"date": "Date",
+		"description": "Title",
+		"created_at": "Date",
 		"amount": "Amount",
 		"category": "Category",
 		"actions": "Actions",

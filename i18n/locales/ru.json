@@ -26,8 +26,8 @@
 	},
 	"table": {
 		"id": "ID",
-		"title": "Название",
-		"date": "Дата",
+		"description": "Название",
+		"created_at": "Дата",
 		"amount": "Сумма",
 		"category": "Категория",
 		"actions": "Действия",
