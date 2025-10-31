@@ -2,23 +2,13 @@
 import type { TableColumn, DropdownMenuItem } from '@nuxt/ui'
 import type { Transaction } from '~~/types'
 
-// interface Props {
-// 	transactions: Transaction[]
-// }
+interface Props {
+	transactions: Transaction[]
+}
 
-// defineProps<Props>()
+defineProps<Props>()
 
 const { t } = useI18n()
-
-const transactions = ref<Transaction[]>([
-	{
-		id: '11',
-		description: 'Зарплата',
-		category: 'Категория',
-		created_at: new Date().toISOString(),
-		amount: 85000
-	}
-])
 
 const columns: TableColumn<Transaction>[] = [
 	{
@@ -29,7 +19,7 @@ const columns: TableColumn<Transaction>[] = [
 	{
 		accessorKey: 'category',
 		header: t('table.category'),
-		cell: ({ row }) => `${row.getValue('category')}`
+		cell: ({ row }) => `${row.getValue('category') ?? ''}`
 	},
 	{
 		accessorKey: 'created_at',

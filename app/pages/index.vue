@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Period } from '~~/types'
+import type { Period, Transaction } from '~~/types'
 
 definePageMeta({
 	layout: 'dashboard'
@@ -12,6 +12,24 @@ useHead({
 })
 
 const period = ref<Period>('monthly')
+
+const transactions = ref<Transaction[]>([])
+
+const headers = useRequestHeaders()
+const { data, error } = await useFetch('/api/transactions/', {
+	headers
+})
+
+if (error.value) {
+	showError({
+		statusCode: error.value.statusCode,
+		statusMessage: error.value.message || 'Internal Server Error'
+	})
+}
+
+if (data.value) {
+	transactions.value = data.value
+}
 </script>
 
 <template>
@@ -30,10 +48,12 @@ const period = ref<Period>('monthly')
 		</template>
 
 		<template #body>
-			<!-- тренды -->
-			<TransactionTrends />
-			<!-- таблица -->
-			<TransactionTable />
+			<template v-if="data">
+				<!-- тренды -->
+				<TransactionTrends />
+				<!-- таблица -->
+				<TransactionTable :transactions="transactions" />
+			</template>
 		</template>
 	</UDashboardPanel>
 </template>
