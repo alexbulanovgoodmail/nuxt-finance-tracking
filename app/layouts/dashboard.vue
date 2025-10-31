@@ -30,7 +30,9 @@ const links = computed(() => [
 				<UNavigationMenu :items="links" orientation="vertical" />
 			</template>
 			<template #footer>
-				<UserMenu />
+				<ClientOnly>
+					<UserMenu />
+				</ClientOnly>
 			</template>
 		</UDashboardSidebar>
 

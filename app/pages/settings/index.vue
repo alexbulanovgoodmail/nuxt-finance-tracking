@@ -15,7 +15,9 @@ const { t } = useI18n()
 			</div>
 			<div class="flex items-center gap-x-4">
 				<p class="">{{ t('settings.appearance') }}:&nbsp;</p>
-				<AppearanceSelect />
+				<ClientOnly>
+					<AppearanceSelect />
+				</ClientOnly>
 			</div>
 		</div>
 	</UPageCard>
