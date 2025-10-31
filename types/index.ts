@@ -5,10 +5,18 @@ export interface Range {
 	end: Date
 }
 
+export enum Type {
+	INCOME = 'Income',
+	SAVINGS = 'Savings',
+	EXPENSES = 'Expenses',
+	INVESTMENT = 'Investment'
+}
+
 export interface Transaction {
 	id: string | number
 	created_at: string
 	description: string
 	category: string
+	type: Type
 	amount: number
 }
