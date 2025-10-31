@@ -33,7 +33,8 @@
 		"actions": "Действия",
 		"no-data": "Нет данных",
 		"action-edit": "Редактировать",
-		"action-delete": "Удалить"
+		"action-delete": "Удалить",
+		"without": "Без категории"
 	},
 	"transactions": {
 		"income": "Доход",

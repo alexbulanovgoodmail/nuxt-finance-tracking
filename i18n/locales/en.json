@@ -33,7 +33,8 @@
 		"actions": "Actions",
 		"no-data": "No data",
 		"action-edit": "Edit",
-		"action-delete": "Delete"
+		"action-delete": "Delete",
+		"without": "Without category"
 	},
 	"transactions": {
 		"income": "Income",
