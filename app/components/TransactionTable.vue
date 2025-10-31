@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { TableColumn, DropdownMenuItem } from '@nuxt/ui'
-import type { Transaction } from '~~/types'
+import { Type, type Transaction } from '~~/types'
 
 interface Props {
 	transactions: Transaction[]
@@ -12,6 +12,10 @@ const { t } = useI18n()
 
 const columns: TableColumn<Transaction>[] = [
 	{
+		accessorKey: 'status',
+		header: ''
+	},
+	{
 		accessorKey: 'description',
 		header: t('table.description'),
 		cell: ({ row }) => `${row.getValue('description')}`
@@ -19,7 +23,7 @@ const columns: TableColumn<Transaction>[] = [
 	{
 		accessorKey: 'category',
 		header: t('table.category'),
-		cell: ({ row }) => `${row.getValue('category') ?? ''}`
+		cell: ({ row }) => `${row.getValue('category') ?? `${t('table.without')}`}`
 	},
 	{
 		accessorKey: 'created_at',
@@ -75,11 +79,33 @@ function getDropdownActions(transaction: Transaction): DropdownMenuItem[][] {
 		]
 	]
 }
+
+function getStatusIcon(transaction: Transaction): string {
+	return transaction.type === Type.INCOME
+		? 'i-lucide-arrow-big-right-dash'
+		: 'i-lucide-arrow-big-left-dash'
+}
+
+function getStatusColor(transaction: Transaction): string {
+	switch (transaction.type) {
+		case Type.INCOME:
+			return 'success'
+
+		default:
+			return 'error'
+	}
+}
 </script>
 
 <template>
 	<UTable :data="transactions" :columns="columns" class="shrink-0">
 		<template #empty> {{ t('table.no-data') }} </template>
+		<template #status-cell="{ row }">
+			<UIcon
+				:name="getStatusIcon(row.original)"
+				:class="`text-${getStatusColor(row.original)}`"
+			/>
+		</template>
 		<template #action-cell="{ row }">
 			<UDropdownMenu :items="getDropdownActions(row.original)">
 				<UButton
